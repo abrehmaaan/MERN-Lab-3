@@ -1,0 +1,37 @@
+doctype
+html 
+    head 
+        title #{fname} #{lname}'s CV
+        link(href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css",rel="stylesheet",integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi",crossorigin="anonymous")
+    body 
+        div(class="container")
+            br
+            div(class="card",style="width: 100%;")
+                div(class="card-body")
+                    h1(class="card-title text-center") #{fname} #{lname}
+                    p(class="card-text text-center") #{email}
+                    div(class="row mb-3")
+                        div(class="col") 
+                            h3 Profile
+                        div(class="col-10") #{profile}
+                    div(class="row mb-3")
+                        div(class="col") 
+                            h3 Objective
+                        div(class="col-10") #{objective}
+                    div(class="mb-3")
+                        h2(class="card-title text-center") Education
+                    div(class="row mb-3 text-center")
+                        div(class="col") 
+                            h3 Type
+                        div(class="col")
+                            h3 Degree
+                        div(class="col")
+                            h3 Grade
+                    each edu in education 
+                        div(class="row mb-3")
+                            div(class="col")= edu.type
+                            div(class="col")= edu.degree
+                            div(class="col")= edu.grade
+                    
+        br
+        script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js",integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3",crossorigin="anonymous")
